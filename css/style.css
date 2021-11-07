@@ -1,0 +1,217 @@
+/* === Минимальное обнуление === */
+*,
+*:before,
+*:after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+	background-color: #333;
+	font-family: "Lato", sans-serif;
+	color: #fff;
+}
+body.lock {
+	overflow: hidden;
+}
+body li {
+	list-style: none;
+}
+body a {
+	text-decoration: none;
+}
+/* === / Минимальное обнуление === */
+
+/* === Основные стили === */
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.container {
+	max-width: 1190px;
+	padding: 0px 10px;
+	margin: 0 auto;
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: indianred;
+}
+
+.header__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 100px;
+}
+
+.header__logo {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #fff;
+	position: relative;
+	z-index: 5;
+}
+
+.header__menu {}
+
+.menu {}
+
+.menu__icon {
+	display: none;
+}
+
+.menu__body {}
+
+.menu__list {}
+
+.menu__list li {
+	position: relative;
+	margin: 0px 0px 0px 20px
+
+}
+
+.menu__link {
+	color: #fff;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.menu__link:hover {
+	text-decoration: underline;
+}
+
+.main {
+	padding: 100px 0px 0px 0px
+}
+
+.main__image {
+	background: url('../img/01.jpg') center / cover no-repeat;
+	background-attachment: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+
+.main__content {
+	padding: 50px 0px 0px 0px
+}
+
+.main__title {
+	margin: 0px 0px 10px 0px
+}
+
+.main__text {
+	margin: 0px 0px 30px 0px
+}
+
+.footer {
+	background-color: indianred;
+}
+
+.footer__container {
+	min-height: 100px;
+	text-align: center;
+	padding: 35px 0px 0px 0px
+}
+
+.footer__title {}
+
+@media (min-width: 767px) {
+	.menu__list {
+		display: flex;
+		align-items: center;
+	}
+	.menu__list li {
+		padding: 10px 0px;
+	}
+}
+
+@media (max-width: 767px) {
+	.menu__icon {
+		z-index: 5;
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+	}
+	.menu__icon span,
+	.menu__icon::before,
+	.menu__icon::after {
+		left: 0;
+		position: absolute;
+		height: 10%;
+		width: 100%;
+		transition: all 0.3s ease;
+		background-color: #fff;
+	}
+	.menu__icon::before,
+	.menu__icon::after {
+		content: '';
+	}
+	.menu__icon::before {
+		top: 0;
+	}
+	.menu__icon::after {
+		bottom: 0;
+	}
+	.menu__icon span {
+		top: 50%;
+		transform: scale(1) translate(0px, -50%);
+	}
+	.menu__icon.active span {
+		transform: scale(0) translate(0px, -50%);
+	}
+	.menu__icon.active::before {
+		top: 50%;
+		transform: rotate(-45deg) translate(0px, -50%);
+	}
+	.menu__icon.active::after {
+		bottom: 50%;
+		transform: rotate(45deg) translate(0px, 50%);
+	}
+	.menu__body {
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.9);
+		padding: 130px 30px 30px;
+		transition: all 0.3s ease 0s;
+		overflow: auto;
+	}
+	.menu__body.active {
+		top: 0;
+	}
+	.menu__body::before {
+		content: '';
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 100px;
+		z-index: 2;
+		background-color: indianred;
+	}
+	.menu__list li {
+		margin: 0px 0px 30px 0px
+	}
+	.menu__list li:last-child {
+		margin: 0;
+	}
+	.menu__link {
+		font-size: 24px;
+	}
+}
+
+/* === / Основные стили === */
